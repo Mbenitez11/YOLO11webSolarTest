@@ -274,7 +274,10 @@ class Inference:
                 self.ann_frame.image(annotated_frame, channels="BGR", caption="📌 Frame con detección")  # Display processed
 
             cap.release()  # Release the capture
-        cv2.destroyAllWindows()  # Destroy all OpenCV windows
+        try:
+              cv2.destroyAllWindows()
+        except cv2.error:
+            pass  # Destroy all OpenCV windows
 
 
 if __name__ == "__main__":
