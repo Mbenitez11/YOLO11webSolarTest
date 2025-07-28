@@ -112,7 +112,7 @@ class Inference:
         # Set html page configuration and append custom HTML
         self.st.set_page_config(
           page_title="FiunaYOLO",
-          layout="wide",
+          layout="centered",
           page_icon="favicon.png"  # archivo local
         )
                 
