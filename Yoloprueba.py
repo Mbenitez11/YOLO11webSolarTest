@@ -124,9 +124,9 @@ class Inference:
         self.st.sidebar.title("Configuracion")  # Add elements to vertical setting menu
         self.source = self.st.sidebar.selectbox(
             "📷 Fuente de entrada",
-            ("webcam","webcam cliente", "video", "imagen"),
+            ("webcam cliente", "video", "imagen"),
         )  # Add source selection dropdown
-        if self.source in ["webcam", "video"]:
+        if self.source in ["video"]:
             self.enable_trk = self.st.sidebar.radio("¿Activar seguimiento de objetos?", ("Si", "No")) == "Si"  # Enable object tracking
         self.conf = float(
             self.st.sidebar.slider("🔍 Umbral de confianza", 0.0, 1.0, self.conf, 0.01)
@@ -150,8 +150,7 @@ class Inference:
                 with open("ultralytics.mp4", "wb") as out:  # Open temporary file as bytes
                     out.write(g.read())  # Read bytes into file
                 self.vid_file_name = "ultralytics.mp4"
-        elif self.source == "webcam":
-            self.vid_file_name = 0  # Use webcam index 0
+
         elif self.source == "imagen":
             import tempfile  # scope import
 
