@@ -110,7 +110,12 @@ class Inference:
         margin-top:-15px; margin-bottom:50px;">Pureba de modelo en tiempo real de la aplicacion YOLO11! 🚀</h5></div>"""
 
         # Set html page configuration and append custom HTML
-        self.st.set_page_config(page_title="Calixtoput*", layout="wide")
+        self.st.set_page_config(
+          page_title="FiunaYOLO",
+          layout="wide",
+          page_icon="favicon.png"  # archivo local
+        )
+                
         self.st.markdown(menu_style_cfg, unsafe_allow_html=True)
         self.st.markdown(main_title_cfg, unsafe_allow_html=True)
         self.st.markdown(sub_title_cfg, unsafe_allow_html=True)
